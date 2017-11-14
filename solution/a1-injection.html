@@ -1,0 +1,443 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>A1 Injection · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="a2-broken-auth.html" />
+    
+    
+    <link rel="prev" href="../setup.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../setup.html">
+            
+                <a href="../setup.html">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Solution</li>
+        
+        
+    
+        <li class="chapter active" data-level="2.1" data-path="a1-injection.html">
+            
+                <a href="a1-injection.html">
+            
+                    
+                    A1 Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="a2-broken-auth.html">
+            
+                <a href="a2-broken-auth.html">
+            
+                    
+                    A2 Broken Authentication and Session Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="a3-xss.html">
+            
+                <a href="a3-xss.html">
+            
+                    
+                    A3 Cross-site Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="a4-idor.html">
+            
+                <a href="a4-idor.html">
+            
+                    
+                    A4 Insecure Direct Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="a5-securty-misconfig.html">
+            
+                <a href="a5-securty-misconfig.html">
+            
+                    
+                    A5 Security Misconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="a6-sensitive-data-exposure.html">
+            
+                <a href="a6-sensitive-data-exposure.html">
+            
+                    
+                    A6 Sensitive Data Exposure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="a7-missing-function-level-access-control.html">
+            
+                <a href="a7-missing-function-level-access-control.html">
+            
+                    
+                    A7 Missing Function Level Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="a8-csrf.html">
+            
+                <a href="a8-csrf.html">
+            
+                    
+                    A8 Cross-site Request Forgery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="a9-using-components-with-known-vulnerability.html">
+            
+                <a href="a9-using-components-with-known-vulnerability.html">
+            
+                    
+                    A9 Using Components with Known Vulnerability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="a10-unvalidated-redirects-and-forwards.html">
+            
+                <a href="a10-unvalidated-redirects-and-forwards.html">
+            
+                    
+                    A10 Unvalidated Redirects and Forwards
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >A1 Injection</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="injection">Injection</h1>
+<h2 id="sql-injection">SQL Injection</h2>
+<p>There is a SQL Injection in <code>User Search</code> feature at the following URL  </p>
+<p><a href="http://127.0.0.1:9090/app/usersearch" target="_blank">http://127.0.0.1:9090/app/usersearch</a></p>
+<p>By injecting a single quote <code>&apos;</code>, we see an error has occurred.
+<img src="../resources/sqli1.png" alt="sqli1" title="SQLi Trigger"></p>
+<p>An attacker can exploit this further and obtain potentially sensitive information from the database
+<img src="../resources/sqli2.png" alt="sqli2" title="Exploiting SQLi"></p>
+<p><strong>Vulnerable Code snippet</strong></p>
+<p><em>core/apphandler.js</em></p>
+<pre><code>...
+var query = &quot;SELECT name FROM Users WHERE login=&apos;&quot; + req.body.login + &quot;&apos;&quot;;
+db.sequelize.query(query,{ model: db.User }).then(user =&gt; {
+    if(user.length){
+...
+</code></pre><p><strong>Solution</strong></p>
+<p>You may use model&apos;s <strong>find</strong> function and rely on in-built input sanitization of sequelize</p>
+<pre><code>...
+db.Users.find({where:{login:req.body.login}}).then(user =&gt; {
+    if(user){
+...
+</code></pre><p>But it is recommended to explicitly validate/sanitize inputs</p>
+<p><strong>Recommendation</strong></p>
+<ul>
+<li>Validate Input before processing</li>
+<li>Sanitize Input before storing</li>
+</ul>
+<p>Never trust the user, using a library like <a href="https://www.npmjs.com/package/validator" target="_blank">validatorjs</a> may help.</p>
+<h2 id="command-injection">Command Injection</h2>
+<p>There is a Command Injection in <code>Connectivity Test</code> feature at the following URL</p>
+<p><a href="http://127.0.0.1:9090/app/ping" target="_blank">http://127.0.0.1:9090/app/ping</a></p>
+<p>By injecting <code>x ; id</code>, we are able to see that the <code>id</code> command has been executed.
+<img src="../resources/ci1.png" alt="ci1" title="Command injection"></p>
+<p><strong>Vulnerable Code snippet</strong></p>
+<p><em>core/apphandler.js</em></p>
+<pre><code>const exec = require(&apos;child_process&apos;).exec;
+...
+exec(&apos;ping -c 2 &apos;+ req.body.address, function(err,stdout,stderr){
+    console.log(err)
+    output = stdout + stderr
+...
+</code></pre><p><strong>Solution</strong></p>
+<p>You may use <code>exec_file</code> or <code>spawn</code> method under child_process which will prevent arbitrary command execution.</p>
+<pre><code>const execFile = require(&apos;child_process&apos;).execFile;
+...
+execFile(&apos;ping&apos;, [&apos;-c&apos;, &apos;2&apos;, req.body.address] , function(err,stdout,stderr){
+    console.log(err)
+    output = stdout + stderr
+...
+</code></pre><p><strong>Recommendation</strong></p>
+<ul>
+<li>Use exec_file or spawn method instead</li>
+<li>Always Validate/Sanitize Input before processing. Look at <a href="https://www.npmjs.com/package/validator" target="_blank">validator</a></li>
+<li>Run commands in a sandbox/ isolated environment if possible</li>
+<li>Use a restricted user for running the process</li>
+</ul>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection" target="_blank">https://www.owasp.org/index.php/Top_10_2013-A1-Injection</a></li>
+<li><a href="https://snyk.io/blog/sql-injection-orm-vulnerabilities/" target="_blank">https://snyk.io/blog/sql-injection-orm-vulnerabilities/</a></li>
+<li><a href="https://hackernoon.com/nodejs-security-issue-javascript-node-example-tutorial-vulnerabilities-hack-line-url-command-injection-412011924d1b" target="_blank">https://hackernoon.com/nodejs-security-issue-javascript-node-example-tutorial-vulnerabilities-hack-line-url-command-injection-412011924d1b</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../setup.html" class="navigation navigation-prev " aria-label="Previous page: Setup">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="a2-broken-auth.html" class="navigation navigation-next " aria-label="Next page: A2 Broken Authentication and Session Management">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"A1 Injection","level":"2.1","depth":1,"next":{"title":"A2 Broken Authentication and Session Management","level":"2.2","depth":1,"path":"solution/a2-broken-auth.md","ref":"solution/a2-broken-auth.md","articles":[]},"previous":{"title":"Setup","level":"1.2","depth":1,"path":"setup.md","ref":"setup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solution/a1-injection.md","mtime":"2017-11-14T04:38:13.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-14T04:51:01.858Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

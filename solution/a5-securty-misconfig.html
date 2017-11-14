@@ -1,0 +1,413 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>A5 Security Misconfiguration · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="a6-sensitive-data-exposure.html" />
+    
+    
+    <link rel="prev" href="a4-idor.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../setup.html">
+            
+                <a href="../setup.html">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Solution</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="a1-injection.html">
+            
+                <a href="a1-injection.html">
+            
+                    
+                    A1 Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="a2-broken-auth.html">
+            
+                <a href="a2-broken-auth.html">
+            
+                    
+                    A2 Broken Authentication and Session Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="a3-xss.html">
+            
+                <a href="a3-xss.html">
+            
+                    
+                    A3 Cross-site Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="a4-idor.html">
+            
+                <a href="a4-idor.html">
+            
+                    
+                    A4 Insecure Direct Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="a5-securty-misconfig.html">
+            
+                <a href="a5-securty-misconfig.html">
+            
+                    
+                    A5 Security Misconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="a6-sensitive-data-exposure.html">
+            
+                <a href="a6-sensitive-data-exposure.html">
+            
+                    
+                    A6 Sensitive Data Exposure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="a7-missing-function-level-access-control.html">
+            
+                <a href="a7-missing-function-level-access-control.html">
+            
+                    
+                    A7 Missing Function Level Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="a8-csrf.html">
+            
+                <a href="a8-csrf.html">
+            
+                    
+                    A8 Cross-site Request Forgery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="a9-using-components-with-known-vulnerability.html">
+            
+                <a href="a9-using-components-with-known-vulnerability.html">
+            
+                    
+                    A9 Using Components with Known Vulnerability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="a10-unvalidated-redirects-and-forwards.html">
+            
+                <a href="a10-unvalidated-redirects-and-forwards.html">
+            
+                    
+                    A10 Unvalidated Redirects and Forwards
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >A5 Security Misconfiguration</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="security-misconfiguration">Security Misconfiguration</h1>
+<h2 id="application-sends-stack-trace">Application sends Stack Trace</h2>
+<p><img src="../resources/secmis1.png" alt="secmis1" title="Security Misconfiguration">
+An invalid input <code>XD</code> triggers a stack trace in the calculator endpoint at</p>
+<p><a href="http://127.0.0.1:9090/app/calc" target="_blank">http://127.0.0.1:9090/app/calc</a></p>
+<p>The application was running in <code>DEVELOPMENT</code> mode and due to lack of error handling, it sent the stack trace with internal file locations and other potentially sensitive information.</p>
+<p><em>/core/apphandler.js</em></p>
+<pre><code>...
+if(req.body.eqn){
+    req.flash(&apos;result&apos;,mathjs.eval(req.body.eqn))
+    res.render(&apos;app/calc&apos;)
+...
+</code></pre><p>Additionally the issue occurs due to insecure NodeJS configuration that shows stack staces.</p>
+<p><strong>Solution</strong></p>
+<p>This particular issue can be solved by using a try catch exception handling</p>
+<pre><code>try{
+    result = mathjs.eval(req.body.eqn)
+}catch{
+    result = &apos;Invalid Equation&apos;
+}
+</code></pre><p>But a bigger issue is the application running in development mode. Set <strong>NODE_ENV</strong> environment variable to <code>production</code>, this improves performance too!</p>
+<h2 id="x-powered-by-header">X-Powered-By header</h2>
+<p><img src="../resources/powered-by.png" alt="powered-by" title="X-Powered-By"></p>
+<p>The <code>X-Powered-By : Express</code> header is sent by default in every response and disabling this is a good way to prevent attackers from fingerprinting your application.</p>
+<p><strong>Solution</strong></p>
+<p>Disable it using  <code>app.disable(&apos;x-powered-by&apos;)</code> in express</p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://expressjs.com/en/advanced/best-practice-security.html" target="_blank">https://expressjs.com/en/advanced/best-practice-security.html</a></li>
+<li><a href="https://www.owasp.org/index.php/Top_10_2013-A5-Security_Misconfiguration" target="_blank">https://www.owasp.org/index.php/Top_10_2013-A5-Security_Misconfiguration</a></li>
+<li><a href="https://blog.risingstack.com/node-js-security-checklist/" target="_blank">https://blog.risingstack.com/node-js-security-checklist/</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="a4-idor.html" class="navigation navigation-prev " aria-label="Previous page: A4 Insecure Direct Object Reference">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="a6-sensitive-data-exposure.html" class="navigation navigation-next " aria-label="Next page: A6 Sensitive Data Exposure">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"A5 Security Misconfiguration","level":"2.5","depth":1,"next":{"title":"A6 Sensitive Data Exposure","level":"2.6","depth":1,"path":"solution/a6-sensitive-data-exposure.md","ref":"solution/a6-sensitive-data-exposure.md","articles":[]},"previous":{"title":"A4 Insecure Direct Object Reference","level":"2.4","depth":1,"path":"solution/a4-idor.md","ref":"solution/a4-idor.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solution/a5-securty-misconfig.md","mtime":"2017-11-14T04:38:13.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-14T04:51:01.858Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

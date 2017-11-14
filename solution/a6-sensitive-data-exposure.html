@@ -1,0 +1,422 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>A6 Sensitive Data Exposure · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="a7-missing-function-level-access-control.html" />
+    
+    
+    <link rel="prev" href="a5-securty-misconfig.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../setup.html">
+            
+                <a href="../setup.html">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Solution</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="a1-injection.html">
+            
+                <a href="a1-injection.html">
+            
+                    
+                    A1 Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="a2-broken-auth.html">
+            
+                <a href="a2-broken-auth.html">
+            
+                    
+                    A2 Broken Authentication and Session Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="a3-xss.html">
+            
+                <a href="a3-xss.html">
+            
+                    
+                    A3 Cross-site Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="a4-idor.html">
+            
+                <a href="a4-idor.html">
+            
+                    
+                    A4 Insecure Direct Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="a5-securty-misconfig.html">
+            
+                <a href="a5-securty-misconfig.html">
+            
+                    
+                    A5 Security Misconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6" data-path="a6-sensitive-data-exposure.html">
+            
+                <a href="a6-sensitive-data-exposure.html">
+            
+                    
+                    A6 Sensitive Data Exposure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="a7-missing-function-level-access-control.html">
+            
+                <a href="a7-missing-function-level-access-control.html">
+            
+                    
+                    A7 Missing Function Level Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="a8-csrf.html">
+            
+                <a href="a8-csrf.html">
+            
+                    
+                    A8 Cross-site Request Forgery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="a9-using-components-with-known-vulnerability.html">
+            
+                <a href="a9-using-components-with-known-vulnerability.html">
+            
+                    
+                    A9 Using Components with Known Vulnerability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="a10-unvalidated-redirects-and-forwards.html">
+            
+                <a href="a10-unvalidated-redirects-and-forwards.html">
+            
+                    
+                    A10 Unvalidated Redirects and Forwards
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >A6 Sensitive Data Exposure</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sensitive-data-disclosure">Sensitive Data Disclosure</h1>
+<h2 id="hashed-passwords-disclosed">Hashed Passwords Disclosed</h2>
+<p><img src="../resources/info-dis.png" alt="info-dis" title="Password Hash Disclosed"></p>
+<p>The Admin API endpoint at <a href="http://127.0.0.1:9090/app/admin/api/users" target="_blank">http://127.0.0.1:9090/app/admin/api/users</a> sends the entire user object to the front end. Even if the application/page rendering this may not display the password, it&apos;s critical that only necessary information is sent instead of the entire object</p>
+<p><strong>Vulnerable Code snippet</strong></p>
+<p><em>core/apphandler.js</em></p>
+<pre><code>...
+db.User.findAll({}).then(users =&gt; {
+    res.status(200).json({
+        success: true,
+        users: users
+    })
+...
+</code></pre><p><strong>Solution</strong></p>
+<p>This particular error can be fixed by selecting for only the required attributes from the database</p>
+<pre><code>db.User.findAll({attributes: [ &apos;id&apos; ,&apos;name&apos;, &apos;email&apos;]},).then(users =&gt; {
+    res.status(200).json({
+        success: true,
+        users: users
+    })
+</code></pre><h2 id="logging-of-sensitive-information">Logging of sensitive information</h2>
+<p><img src="../resources/info-dis2.png" alt="info-dis" title="Password Hash Disclosed"></p>
+<p>By default, Sequelize logs every query using <code>console.log</code>, this could be a serious issue if these logs are stored to disk or worse, sent elsewhere for analytics or other purposes</p>
+<p><strong>Solution</strong></p>
+<p>To fix this issue, disable logging in Sequelize</p>
+<pre><code>// Sequelize connection
+var sequelize = new Sequelize(config.database, config.username, config.password, {
+    host: config.host, 
+    dialect: config.dialect, 
+    logging: false
+});
+</code></pre><p><strong>Recommendation</strong></p>
+<ul>
+<li>Always be wary of where all your data resides or is transmitted to</li>
+<li>Send only the minimum information which is essential, even if may not be used</li>
+</ul>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure" target="_blank">https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure</a></li>
+<li><a href="https://stackoverflow.com/questions/28927836/prevent-sequelize-from-outputting-sql-to-the-console-on-execution-of-query" target="_blank">https://stackoverflow.com/questions/28927836/prevent-sequelize-from-outputting-sql-to-the-console-on-execution-of-query</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="a5-securty-misconfig.html" class="navigation navigation-prev " aria-label="Previous page: A5 Security Misconfiguration">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="a7-missing-function-level-access-control.html" class="navigation navigation-next " aria-label="Next page: A7 Missing Function Level Access Control">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"A6 Sensitive Data Exposure","level":"2.6","depth":1,"next":{"title":"A7 Missing Function Level Access Control","level":"2.7","depth":1,"path":"solution/a7-missing-function-level-access-control.md","ref":"solution/a7-missing-function-level-access-control.md","articles":[]},"previous":{"title":"A5 Security Misconfiguration","level":"2.5","depth":1,"path":"solution/a5-securty-misconfig.md","ref":"solution/a5-securty-misconfig.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solution/a6-sensitive-data-exposure.md","mtime":"2017-11-14T04:38:13.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-14T04:51:01.858Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

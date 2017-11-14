@@ -1,0 +1,425 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>A7 Missing Function Level Access Control · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="a8-csrf.html" />
+    
+    
+    <link rel="prev" href="a6-sensitive-data-exposure.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../setup.html">
+            
+                <a href="../setup.html">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Solution</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="a1-injection.html">
+            
+                <a href="a1-injection.html">
+            
+                    
+                    A1 Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="a2-broken-auth.html">
+            
+                <a href="a2-broken-auth.html">
+            
+                    
+                    A2 Broken Authentication and Session Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="a3-xss.html">
+            
+                <a href="a3-xss.html">
+            
+                    
+                    A3 Cross-site Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="a4-idor.html">
+            
+                <a href="a4-idor.html">
+            
+                    
+                    A4 Insecure Direct Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="a5-securty-misconfig.html">
+            
+                <a href="a5-securty-misconfig.html">
+            
+                    
+                    A5 Security Misconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="a6-sensitive-data-exposure.html">
+            
+                <a href="a6-sensitive-data-exposure.html">
+            
+                    
+                    A6 Sensitive Data Exposure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.7" data-path="a7-missing-function-level-access-control.html">
+            
+                <a href="a7-missing-function-level-access-control.html">
+            
+                    
+                    A7 Missing Function Level Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="a8-csrf.html">
+            
+                <a href="a8-csrf.html">
+            
+                    
+                    A8 Cross-site Request Forgery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="a9-using-components-with-known-vulnerability.html">
+            
+                <a href="a9-using-components-with-known-vulnerability.html">
+            
+                    
+                    A9 Using Components with Known Vulnerability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="a10-unvalidated-redirects-and-forwards.html">
+            
+                <a href="a10-unvalidated-redirects-and-forwards.html">
+            
+                    
+                    A10 Unvalidated Redirects and Forwards
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >A7 Missing Function Level Access Control</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="missing-function-level-access-control">Missing Function Level Access Control</h1>
+<h2 id="unauthorized-access-to-users-api">Unauthorized Access to Users API</h2>
+<p>The issue lies in <code>List Users</code> API implementation where the code does not correctly establish identity and capability for the calling user before fulfilling the request.</p>
+<p><strong>Vulnerable Code snippet</strong></p>
+<p><em>routes/app.js</em></p>
+<pre><code>...
+router.get(&apos;/admin&apos;,authHandler.isAuthenticated,function(req,res){
+    res.render(&apos;app/admin&apos;,{admin: (req.user.role==&apos;admin&apos;)})
+})
+
+router.get(&apos;/admin/api/users&apos;,authHandler.isAuthenticated, appHandler.listUsersAPI)
+...
+</code></pre><p><em>views/app/admin.ejs</em></p>
+<pre><code>...
+var isAdmin = false;
+if(!isAdmin){
+    var div = document.getElementById(&apos;admin-body&apos;);
+    div.style.display = &quot;none&quot;;
+}else{
+    var div = document.getElementById(&apos;non-admin-body&apos;);
+    div.style.display = &quot;none&quot;;            
+}
+...
+</code></pre><p>By checking the page source, we are able to see the <code>List Users API</code> that isn&apos;t visible in the Dashboard.</p>
+<p><img src="../resources/missing-fn-access.png" alt="missing-fn-access" title="API Hidden in Front End"></p>
+<p>The API endpoint doesn&apos;t check whether the requesting user is an admin. Assuming that an attacker will not be able to access your endpoints because they are hidden is a very bad practice.</p>
+<p><strong>Solution</strong></p>
+<p>The <code>List Users API</code> route must check the requesting user&apos;s privilege before serving the request.</p>
+<pre><code>function adminCheck(req,res,next){
+    if(req.user.role==&apos;admin&apos;)
+        next()
+    else
+        res.status(401).send(&apos;Unauthorized&apos;)
+}
+
+router.get(&apos;/admin/api/users&apos;,authHandler.isAuthenticated, adminCheck, appHandler.listUsersAPI)
+</code></pre><p><strong>Recommendation</strong></p>
+<ul>
+<li>Try to restrict your functions to maximum extent, White listing is always better than blacklisting</li>
+</ul>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control" target="_blank">https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="a6-sensitive-data-exposure.html" class="navigation navigation-prev " aria-label="Previous page: A6 Sensitive Data Exposure">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="a8-csrf.html" class="navigation navigation-next " aria-label="Next page: A8 Cross-site Request Forgery">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"A7 Missing Function Level Access Control","level":"2.7","depth":1,"next":{"title":"A8 Cross-site Request Forgery","level":"2.8","depth":1,"path":"solution/a8-csrf.md","ref":"solution/a8-csrf.md","articles":[]},"previous":{"title":"A6 Sensitive Data Exposure","level":"2.6","depth":1,"path":"solution/a6-sensitive-data-exposure.md","ref":"solution/a6-sensitive-data-exposure.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solution/a7-missing-function-level-access-control.md","mtime":"2017-11-14T04:38:13.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-14T04:51:01.858Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
